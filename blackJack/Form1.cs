@@ -1,3 +1,4 @@
+
 using blackJack.classes;
 using System;
 using System.Collections.Generic;
@@ -9,21 +10,41 @@ namespace blackJack
     {
         public Form1()
         {
-            //string hello = Console.ReadLine();
-            //Console.WriteLine(hello);
-  
-            // Creates a deck
-            List<Cards> deck = Cards.CreateDeck();
+            InitializeComponent();
+            // Makes new deck
+            Deck deck = new Deck();
 
+            Console.WriteLine("Shuffling deck...");
+            deck.ShuffleCards();
 
-            // Shuffles all my cards
-            Cards.Shuffle(deck);
-
-
-            // Shows my cards in the console
-            foreach (var card in deck)
+            while (true)
             {
-                Console.WriteLine(card); 
+                Console.Write("Type 'pull' to draw a card or 'exit' to quit: ");
+                // ToLower makes everything lowercase and trim prevents crashes from empty input
+                string input = Console.ReadLine()?.Trim().ToLower();
+
+                if (input == "pull")
+                {
+                    if (deck.CardsRemaining() > 0)
+                    {
+                        Card drawnCard = deck.DealCard();
+                        Console.WriteLine($"Drawn card: {drawnCard.FaceValue} of {drawnCard.Suit}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No more cards left in the deck!");
+                    }
+                }
+                else if (input == "exit")
+                {
+                    Console.WriteLine("Exiting...");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid command! Type 'pull' or 'exit'.");
+                }
+
             }
         }
     }
