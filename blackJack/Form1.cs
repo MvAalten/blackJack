@@ -1,4 +1,8 @@
-using WinFormsBlackJackApp1.classes;
+
+using blackJack.classes;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace blackJack
 {
@@ -40,6 +44,7 @@ namespace blackJack
                 {
                     Console.WriteLine("Invalid command! Type 'pull' or 'exit'.");
                 }
+
             }
         }
     }
