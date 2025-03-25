@@ -3,6 +3,8 @@ using blackJack.classes;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using WindowsFormsApp1;
+using WinFormsBlackJackApp1.classes;
 
 namespace blackJack
 {
