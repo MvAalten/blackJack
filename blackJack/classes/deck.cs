@@ -8,6 +8,7 @@ namespace WinFormsBlackJackApp1.classes
     {
         private List<Card> cards;
         private static Random rng = new Random();
+        private bool IsClosed = false;
 
         public Deck()
         {
@@ -49,7 +50,7 @@ namespace WinFormsBlackJackApp1.classes
             return dealtCard;
         }
 
-        public void Shuffle()
+        private void Shuffle()
         {
             for (int cardCount = cards.Count - 1; cardCount > 0; cardCount--)
             {
