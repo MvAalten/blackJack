@@ -62,11 +62,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        public Card CreateCard(Suits suit, FaceValues faceValue)
-        {
-            return new Card(suit, faceValue);
-        }
-
         public string CardOutput()
         {
             return $"{FaceValue} of {Suit}";
