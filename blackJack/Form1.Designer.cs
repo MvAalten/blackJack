@@ -96,6 +96,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+
             Controls.Add(cards_left);
             Controls.Add(label1);
             Controls.Add(button3);
@@ -106,6 +107,7 @@
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion
