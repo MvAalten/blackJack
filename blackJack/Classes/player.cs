@@ -19,11 +19,6 @@ namespace WindowsFormsApp1.classes
             cards.Add(card);
         }
 
-        public int getTotalHandValue()
-        {
-            return 0;
-        }
-
         public void Stand()
         {
             hasStood = true;
