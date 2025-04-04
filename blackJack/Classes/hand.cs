@@ -10,6 +10,8 @@ public class Hand
     private bool winner;
     private bool loser;
     private bool blackjack;
+    bool hasStood = false;
+
     public Hand()
     {
         cards = new List<Card>();
@@ -23,5 +25,9 @@ public class Hand
     public void Hit(Card card)
     {
         cards.Add(card);
+    }
+    public void Stand()
+    {
+        hasStood = true;
     }
 }
