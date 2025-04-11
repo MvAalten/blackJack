@@ -8,7 +8,7 @@ namespace WinFormsBlackJackApp1.classes
     {
         private List<Card> cards;
         private static Random rng = new Random();
-        private bool IsClosed = false;
+        //private bool IsClosed = false;
 
         public Deck()
         {
@@ -52,9 +52,9 @@ namespace WinFormsBlackJackApp1.classes
 
         private void Shuffle()
         {
-            for (int cardCount = cards.Count - 1; cardCount > 0; cardCount--)
+            for (int cardCount = 0; cardCount < 52; cardCount++)
             {
-                int R = rng.Next(cardCount + 1);
+                int R = rng.Next(cardCount);
                 (cards[cardCount], cards[R]) = (cards[R], cards[cardCount]);
             }
         }
