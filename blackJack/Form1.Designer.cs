@@ -34,6 +34,8 @@
             button3 = new Button();
             label1 = new Label();
             cards_left = new Label();
+            label2 = new Label();
+            button4 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -66,7 +68,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(251, 30);
+            button3.Location = new Point(251, 34);
             button3.Name = "button3";
             button3.Size = new Size(112, 67);
             button3.TabIndex = 3;
@@ -76,12 +78,10 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(425, 41);
+            label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
-            label1.TabIndex = 4;
-            label1.Click += label1_Click;
+            label1.Size = new Size(100, 23);
+            label1.TabIndex = 6;
             // 
             // cards_left
             // 
@@ -91,12 +91,31 @@
             cards_left.Size = new Size(0, 20);
             cards_left.TabIndex = 5;
             // 
+            // label2
+            // 
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 23);
+            label2.TabIndex = 0;
+            // 
+            // button4
+            // 
+            button4.FlatStyle = FlatStyle.System;
+            button4.Location = new Point(369, 30);
+            button4.Name = "button4";
+            button4.Size = new Size(112, 67);
+            button4.TabIndex = 8;
+            button4.Text = "Stand";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-
+            Controls.Add(button4);
+            Controls.Add(label2);
             Controls.Add(cards_left);
             Controls.Add(label1);
             Controls.Add(button3);
@@ -118,5 +137,7 @@
         private Button button3;
         private Label label1;
         private Label cards_left;
+        private Label label2;
+        private Button button4;
     }
 }

@@ -1,13 +1,14 @@
 using System;
 using System.Windows.Forms;
-using WindowsFormsApp1;
 using WinFormsBlackJackApp1.classes;
+using WindowsFormsApp1;
 
 namespace blackJack
 {
     public partial class Form1 : Form
     {
         Deck deck;
+        Hand playerHand; // <-- New: player's hand
 
         public Form1()
         {
@@ -18,9 +19,10 @@ namespace blackJack
         {
             // New game
             deck = new Deck();
+            playerHand = new Hand(); // <-- New: initialize hand
 
             richTextBox1.Clear();
-            richTextBox1.AppendText("Game started!");
+            richTextBox1.AppendText("Game started!\n");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -38,8 +40,8 @@ namespace blackJack
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // This button should deal one of my cards
-            if (deck == null)
+            // Deal a card to the player
+            if (deck == null || playerHand == null)
             {
                 richTextBox1.AppendText("Start the game first!\n");
                 return;
@@ -48,7 +50,8 @@ namespace blackJack
             if (deck.CardsRemaining() > 0)
             {
                 Card drawnCard = deck.DealCard();
-                richTextBox1.AppendText($"Drawn card: {drawnCard.FaceValue} of {drawnCard.Suit}\n");
+                playerHand.Hit(drawnCard); // <-- New: add card to hand
+                richTextBox1.AppendText($"You drew: {drawnCard.FaceValue} of {drawnCard.Suit}\n");
             }
             else
             {
@@ -63,9 +66,9 @@ namespace blackJack
             richTextBox1.ScrollToCaret();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            // No logic needed here yet
+
         }
     }
 }
