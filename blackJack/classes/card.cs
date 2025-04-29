@@ -66,6 +66,13 @@ namespace WindowsFormsApp1
         {
             return $"{FaceValue} of {Suit}";
         }
+        public void AceChangeTo10()
+        {
+            if (FaceValue == FaceValues.ACE && Value == 11)
+            {
+                Value = 1;
+            }
+        }
     }
 
 }
