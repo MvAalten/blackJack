@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
         public Suits Suit { get; }
         public FaceValues FaceValue { get; } 
         public int Value { get; private set; }
-       
+        public bool IsClosed { get; set; } = true;
 
         public Card(Suits suit, FaceValues faceValue)
         {
