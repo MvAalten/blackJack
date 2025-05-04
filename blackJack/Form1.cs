@@ -7,6 +7,7 @@ namespace blackJack
 {
     public partial class Form1 : Form
     {
+        /// The deck of cards
         Deck deck;
 
         public Form1()
@@ -58,14 +59,14 @@ namespace blackJack
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            // auto scroll
+
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            // No logic needed here yet
+
         }
     }
 }
