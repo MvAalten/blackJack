@@ -17,7 +17,11 @@ namespace WinFormsBlackJackApp1.classes
             // Initializes the deck
             InitializeDeck();
         }
-
+        /**
+         * For every suit loop
+         *  For every FaceValue loop
+         *      You get a new card
+         */
         private void InitializeDeck()
         {
             // For every suit loop
@@ -31,11 +35,23 @@ namespace WinFormsBlackJackApp1.classes
             }
         }
 
+        /**
+         * Getter for shuffled cards
+         */
         public void ShuffleCards()
         {
             Shuffle();
         }
-
+        /**
+         * If there are cards left in the deck
+         *      Console.WriteLine("No cards left")
+         *      
+         * If there are cards left in the deck 
+         * 
+         * Deal the first card
+         * 
+         * Remove the card that you just dealt from the deck
+         */
         public Card DealCard()
         {
             if (cards.Count == 0)
@@ -49,7 +65,13 @@ namespace WinFormsBlackJackApp1.classes
             cards.RemoveAt(0);
             return dealtCard;
         }
-
+        /**
+        * Shuffles the deck
+        * 
+        * For every card in the deck
+        *  Get a random number between 0 and the current card count
+        *  Swap the current card with the random card
+        */
         private void Shuffle()
         {
             for (int cardCount = 0; cardCount < 52; cardCount++)
